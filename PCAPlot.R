@@ -46,7 +46,7 @@ PCAPlot <- function(counts.trans, group=target[,varInt], n=min(500,nrow(counts.t
     abline(h=0,v=0,lty=2,col="lightgray")
     text(pca$x[,1] - ifelse(pca$x[,1]>0,abs,-abs), pca$x[,3] - ifelse(pca$x[,3]>0,ord,-ord),
          colnames(counts.trans), col=col[as.integer(group)])
-  if (outfile) dev.off()
+  dev.off()
 
   return(invisible(pca$x))
 }

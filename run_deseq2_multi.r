@@ -93,7 +93,7 @@ exploreCounts(object=out.DESeq2$dds, group=target[,varInt], typeTrans=typeTrans,
 # summary of the analysis (boxplots, dispersions, export table, nDiffTotal, histograms, MA plot)
 #source("/summarizeResults.DESeq2.r")
 #summaryResults <- summarizeResults.DESeq2(out.DESeq2, group=target[,varInt], col=col, independentFiltering=independentFiltering,
-                                          cooksCutoff=cooksCutoff, alpha=alpha)
+#                                          cooksCutoff=cooksCutoff, alpha=alpha)
 
 # generating HTML report
 #source("/writeReport.DESeq2.r")
