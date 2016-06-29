@@ -8,8 +8,7 @@
 #' @return A file named cluster.png in the figures directory with the dendrogram of the clustering
 #' @author Marie-Agnes Dillies and Hugo Varet
 
-clusterPlot <- function(group=target[,varInt], output.file="cluster.png"){
-  object=out.edgeR$dge
+clusterPlot <- function(object=out.DESeq2$dds, group=target[,varInt], output.file="cluster.png"){
   counts.trans=cpm(object, prior.count=2, log=TRUE)
   hc <- hclust(dist(t(counts.trans)), method="ward.D")
 
