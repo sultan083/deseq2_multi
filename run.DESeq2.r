@@ -32,7 +32,7 @@ run.DESeq2 <- function(counts, target, varInt, batch=NULL, locfunc, fitType, pAd
   dds <- estimateDispersions(dds, fitType=fitType)
   
   # statistical testing: perform all the comparisons between the levels of varInt
-  dds <- nbinomWaldTest(dds, ...)
+  dds <- nbinomWaldTest(dds)
   results <- list()
   for (comp in combn(nlevels(colData(dds)[,varInt]), 2, simplify=FALSE)){
     levelRef <- levels(colData(dds)[,varInt])[comp[1]]
