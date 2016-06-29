@@ -18,6 +18,8 @@ PCAPlot <- function(counts.trans, group=target[,varInt], n=min(500,nrow(counts.t
   prp <- pca$sdev^2 * 100 / sum(pca$sdev^2)
   prp <- round(prp[1:3],2)
 
+  col <- unlist(strsplit(ret.opts$colors, ","))
+
   # create figure
   png(filename=output.file,width=1800*2,height=1800,res=300)
     par(mfrow=c(1,2))
