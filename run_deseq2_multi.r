@@ -72,12 +72,11 @@ checkParameters.DESeq2(projectName=projectName,author=author,targetFile=targetFi
 # loading target file
 target <- loadTargetFile(targetFile=targetFile, varInt=varInt, condRef=condRef, batch=batch)
 
-
 # loading counts
 #source("/loadCountData.R")
 counts <- loadCountData(target=target, rawDir=rawDir, featuresToRemove=featuresToRemove)
 
-# description plots
+# description Plots
 source("/descriptionPlots.r")
 majSequences <- descriptionPlots(counts=counts, n=3, group=target[,varInt], output.file=output.file, col=col)
 

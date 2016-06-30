@@ -27,8 +27,7 @@
 #' @details This function generates the HTML report for a statistical analysis with DESeq2. It uses the tables and graphs created during the workflow as well as the parameters defined at the beginning of the script.
 #' @author Hugo Varet
 
-writeReport.DESeq2 <- function(target, counts, out.DESeq2, summaryResults, majSequences, OutDir, projectName, author, targetFile, rawDir, featuresToRemove, varInt, condRef, batch, fitType,
-			       cooksCutoff, independentFiltering, alpha, pAdjustMethod, typeTrans, locfunc, colors)
+writeReport.DESeq2 <- function(target, counts, out.DESeq2, summaryResults, majSequences, OutDir, projectName, author, targetFile, rawDir, featuresToRemove, varInt, condRef, batch,   				    fitType,cooksCutoff, independentFiltering, alpha, pAdjustMethod, typeTrans, locfunc, colors)
 {
 
  output=paste0(projectName, "_deseq2-multifactorial_report.html")
@@ -37,6 +36,6 @@ writeReport.DESeq2 <- function(target, counts, out.DESeq2, summaryResults, majSe
 	        output=output, quiet=TRUE, title="Statistical report")
   # delete unwanted directory/file
   unlink("cache",force=TRUE,recursive=TRUE)
-  unlink("report_DESeq2.md",force=TRUE)
+  unlink(paste0("report_DESeq2.md"),force=TRUE)  
   cat("HTML report created\n")
 }
