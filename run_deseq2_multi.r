@@ -79,7 +79,7 @@ counts <- loadCountData(target=target, rawDir=rawDir, featuresToRemove=featuresT
 
 # description plots
 source("/descriptionPlots.r")
-descriptionPlots(counts=counts, n=3, group=target[,varInt], output.file=output.file, col=col)
+majSequences <- descriptionPlots(counts=counts, n=3, group=target[,varInt], output.file=output.file, col=col)
 
 # analysis with DESeq2
 source("/run.DESeq2.r")
