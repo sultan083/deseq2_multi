@@ -16,5 +16,5 @@ exploreCounts <- function(object, group=target[,varInt], typeTrans, gene.selecti
     source("/PCAPlot.R")
     source("/clusterPlot.R")
     PCAPlot(counts.trans=counts.trans, group=target[,varInt], col=col, output.file="PCAplot.png")
-    clusterPlot(group=target[,varInt], output.file="cluster.png")  
+    clusterPlot(counts.trans=counts.trans, group=target[,varInt], output.file="cluster.png")  
   } 
