@@ -21,7 +21,7 @@ summarizeResults.DESeq2 <- function(out.DESeq2, group=target[,varInt], independe
   
   # boxplots before and after normalisation
   source("/countsBoxplots.R")
-  countsBoxplots(dds, group=group, col=col)
+  countsBoxplots(dds, group=group, col=col, output.file="countsBoxplots.png")
   
   # dispersions plot
   source("/dispersionsPlot.R")
