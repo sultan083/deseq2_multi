@@ -22,8 +22,8 @@ RUN Rscript -e 'install.packages("knitr", dependencies = TRUE);'
 RUN Rscript -e 'install.packages("RColorBrewer", dependencies = TRUE);'
 
 # Add multiple custom functions for Pie_compare, Pie_plot and Bar_compare plots
-ENV DESEQ12 https://github.com/upendrak/deseq2_multi
-RUN git clone $DESEQ12
+ENV DE2 https://github.com/upendrak/deseq2_multi
+RUN git clone $DE2
 
 WORKDIR /deseq2_multi
 
