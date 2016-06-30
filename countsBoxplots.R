@@ -10,9 +10,12 @@
 #' @author Marie-Agnes Dillies and Hugo Varet
 
 countsBoxplots <- function(object=out.DESeq2$dds, col=col, group=target[,varInt], output.file="countsBoxplots.png"){
-  counts <- counts(object)
+  counts <- object$counts
   counts <- removeNull(counts)
-  norm.counts <- counts(object, normalized = TRUE)
+	tmm <- object$samples$norm.factors
+  N <- colSums(object$counts)
+  f <- tmm * N/mean(tmm * N)
+  norm.counts <- scale(object$counts, center=FALSE, scale=f)
   norm.counts <- removeNull(norm.counts)    
 
   png(filename=output.file,width=2*min(2200,1800+800*ncol(norm.counts)/10),height=1800,res=300)
