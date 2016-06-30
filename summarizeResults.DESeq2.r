@@ -38,6 +38,7 @@ summarizeResults.DESeq2 <- function(out.DESeq2, group=target[,varInt], independe
   }
   
   # exporting results of the differential analysis
+  source("/exportResults.DESeq2.R")
   complete <- exportResults.DESeq2(out.DESeq2, group=target[,varInt], alpha=alpha)
   
   # small table with number of differentially expressed features
