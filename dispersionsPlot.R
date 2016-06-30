@@ -23,5 +23,5 @@ dispersionsPlot <- function(dds, output.file="dispersionsPlot.png"){
          main = "log-normality dispersion diagnostic",col="skyblue")
     fun <- function(x){dnorm(x,mean=mean.disp,sd=sd.disp)}
     curve(fun,min(disp,na.rm=TRUE),max(disp,na.rm=TRUE),lwd=2,n=101,add=TRUE)
-  if (outfile) dev.off()
+  dev.off()
 }
