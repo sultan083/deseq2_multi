@@ -22,18 +22,18 @@ RUN Rscript -e 'install.packages("knitr", dependencies = TRUE);'
 RUN Rscript -e 'install.packages("RColorBrewer", dependencies = TRUE);'
 
 # Add multiple custom functions for Pie_compare, Pie_plot and Bar_compare plots
-ENV EDGER1234 https://github.com/upendrak/edgeR_multi.git
-RUN git clone $EDGER1234
+ENV DESEQ12 https://github.com/upendrak/deseq2_multi
+RUN git clone $DESEQ12
 
-WORKDIR /edgeR_multi
+WORKDIR /deseq2_multi
 
 # change permissions to the wrapper script
 ENV BINPATH /usr/bin
-RUN chmod +x run_edgeR_multi.r && cp run_edgeR_multi.r $BINPATH
+RUN chmod +x run_deseq2_multi.r && cp run_deseq2_multi.r $BINPATH
 RUN rm -r test_data Dockerfile
 RUN mv *.* /
 
-ENTRYPOINT ["run_edgeR_multi.r"]
+ENTRYPOINT ["run_deseq2_multi.r"]
 CMD ["-h"]
 
 # Building and testing
