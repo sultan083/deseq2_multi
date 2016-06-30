@@ -64,7 +64,7 @@ Figure 1 shows the total number of mapped reads for each sample. Reads that map 
 
 <figure>
 <center>
-    <img src="figures/barplotTotal.png" alt="Barplot total counts" width=600 />
+    <img src="barplotTotal.png" alt="Barplot total counts" width=600 />
 	<figcaption> Figure 1: Number of mapped reads per sample. Colors refer to the biological condition of the sample. </figcaption>
 </center>
 </figure>
@@ -73,7 +73,7 @@ Figure 2 shows the proportion of features with no read count in each sample. We 
 
 <figure>
 <center>
-    <img src="figures/barplotNull.png" alt="Barplot null counts" width=600 />
+    <img src="barplotNull.png" alt="Barplot null counts" width=600 />
 	<figcaption> Figure 2: Proportion of features with null read counts in each sample. </figcaption>
 </center>
 </figure>
@@ -82,7 +82,7 @@ Figure 3 shows the distribution of read counts for each sample. For sake of read
 
 <figure>
 <center>
-    <img src="figures/densplot.png" alt="Estimated densities of raw counts" width="60%" />
+    <img src="densplot.png" alt="Estimated densities of raw counts" width="60%" />
 	<figcaption> Figure 3: Density distribution of read counts. </figcaption>
 </center>
 </figure>
@@ -91,7 +91,7 @@ It may happen that one or a few features capture a high proportion of reads (up 
 
 <figure>
 <center>
-    <img src="figures/majSeq.png" alt="Most represented sequences" width=600 />
+    <img src="majSeq.png" alt="Most represented sequences" width=600 />
 	<figcaption> Figure 4: Percentage of reads associated with the sequence having the highest count (provided in each box on the graph) for each sample. </figcaption>
 </center>
 </figure>
@@ -107,7 +107,7 @@ We may wish to assess the similarity between samples across conditions. A pairwi
 
 <figure>
 <center>
-    <img src="figures/pairwiseScatter.png" alt="Pairwise scatter plot (not produced when more than 30 samples)" />
+    <img src="pairwiseScatter.png" alt="Pairwise scatter plot (not produced when more than 30 samples)" />
 	<figcaption> Figure 5: Pairwise comparison of samples. </figcaption>
 </center>
 </figure>
@@ -125,7 +125,7 @@ Figure 6 shows the dendrogram obtained from `r typeTrans`-transformed data. An e
 
 <figure>
 <center>
-    <img src="figures/cluster.png" alt="Clustering" width="60%" />
+    <img src="cluster.png" alt="Clustering" width="60%" />
 	<figcaption> Figure 6: Sample clustering based on normalized data. </figcaption>
 </center>
 </figure>
@@ -134,7 +134,7 @@ Another way of visualizing the experiment variability is to look at the first pr
 
 <figure>
 <center>
-    <img src="figures/PCA.png" alt="Principal component analysis" />
+    <img src="PCA.png" alt="Principal component analysis" />
 	<figcaption> Figure 7: First two components of a Principal Component Analysis, with percentages of variance associated with each axis. </figcaption>
 </center>
 </figure>
@@ -159,7 +159,7 @@ The histograms (figure 8) can help to validate the choice of the normalization p
 
 <figure>
 <center>
-    <img src="figures/diagSizeFactorsHist.png" alt="Diagnostic of size factors" />
+    <img src="diagSizeFactorsHist.png" alt="Diagnostic of size factors" />
 	<figcaption> Figure 8: Diagnostic of the estimation of the size factors. </figcaption>
 </center>
 </figure>
@@ -168,7 +168,7 @@ The figure 9 shows that the scaling factors of DESeq2 and the total count normal
 
 <figure>
 <center>
-    <img src="figures/diagSizeFactorsTC.png" alt="Size factors vs total counts" width="60%" />
+    <img src="diagSizeFactorsTC.png" alt="Size factors vs total counts" width="60%" />
 	<figcaption> Figure 9: Plot of the estimated size factors and the total number of reads per sample. </figcaption>
 </center>
 </figure>
@@ -177,7 +177,7 @@ Boxplots are often used as a qualitative measure of the quality of the normaliza
 
 <figure>
 <center>
-    <img src="figures/countsBoxplots.png" alt="Boxplots of raw and normalized counts" />
+    <img src="countsBoxplots.png" alt="Boxplots of raw and normalized counts" />
 	<figcaption> Figure 10: Boxplots of raw (left) and normalized (right) read counts. </figcaption>
 </center>
 </figure>
@@ -200,7 +200,7 @@ The DESeq2 model assumes that the count data follow a negative binomial distribu
 
 <figure>
 <center>
-    <img src="figures/dispersionsPlot.png" alt="Dispersions estimations" />
+    <img src="dispersionsPlot.png" alt="Dispersions estimations" />
 	<figcaption> Figure 11: Dispersion estimates (left) and diagnostic of log-normality (right). </figcaption>
 </center>
 </figure>
@@ -213,7 +213,7 @@ Once the dispersion estimation and the model fitting have been done, DESeq2 can 
 
 <figure>
 <center>
-    <img src="figures/rawpHist.png" alt="Histogram(s) of raw p-values" />
+    <img src="rawpHist.png" alt="Histogram(s) of raw p-values" />
 	<figcaption> Figure 12: Distribution(s) of raw p-values. </figcaption>
 </center>
 </figure>
@@ -243,7 +243,7 @@ Figure 13 represents the MA-plot of the data for the comparisons done, where dif
 
 <figure>
 <center>
-    <img src="figures/MAPlot.png" alt="MA-plot(s)" />
+    <img src="MAPlot.png" alt="MA-plot(s)" />
 	<figcaption> Figure 13: MA-plot(s) of each comparison. Red dots represent significantly differentially expressed features. </figcaption>
 </center>
 </figure>
@@ -252,7 +252,7 @@ Figure 14 shows the volcano plots for the comparisons performed and differential
 
 <figure>
 <center>
-    <img src="figures/volcanoPlot.png" alt="Volcano plot(s)" />
+    <img src="volcanoPlot.png" alt="Volcano plot(s)" />
 	<figcaption> Figure 14: Volcano plot(s) of each comparison. Red dots represent significantly differentially expressed features. </figcaption>
 </center>
 </figure>
