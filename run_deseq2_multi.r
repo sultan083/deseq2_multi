@@ -96,9 +96,9 @@ summaryResults <- summarizeResults.DESeq2(out.DESeq2, group=target[,varInt], col
                                           cooksCutoff=cooksCutoff, alpha=alpha)
 
 # generating HTML report
-#source("/writeReport.DESeq2.r")
-#writeReport.DESeq2(target=target, counts=counts, out.DESeq2=out.DESeq2, summaryResults=summaryResults, majSequences=majSequences, workDir=workDir, 
-#		   projectName=projectName, author=author, targetFile=targetFile, rawDir=rawDir, featuresToRemove=featuresToRemove, varInt=varInt,
-#                   condRef=condRef, batch=batch, fitType=fitType, cooksCutoff=cooksCutoff, independentFiltering=independentFiltering, alpha=alpha, 
-#		   pAdjustMethod=pAdjustMethod, typeTrans=typeTrans, locfunc=locfunc, col=col)
+source("/writeReport.DESeq2.r")
+writeReport.DESeq2(target=target, counts=counts, out.DESeq2=out.DESeq2, summaryResults=summaryResults, majSequences=majSequences, OutDir=OutDir, 
+		   projectName=projectName, author=author, targetFile=targetFile, rawDir=rawDir, featuresToRemove=featuresToRemove, varInt=varInt,
+                   condRef=condRef, batch=batch, fitType=fitType, cooksCutoff=cooksCutoff, independentFiltering=independentFiltering, alpha=alpha, 
+		   pAdjustMethod=pAdjustMethod, typeTrans=typeTrans, locfunc=locfunc, colors=col)
 # End
