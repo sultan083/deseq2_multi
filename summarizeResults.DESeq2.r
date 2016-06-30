@@ -17,6 +17,7 @@ summarizeResults.DESeq2 <- function(out.DESeq2, group=target[,varInt], independe
   results <- out.DESeq2$results
   
   # diagnostic of the size factors
+  source("/diagSizeFactorsPlots.R")
   diagSizeFactorsPlots(dds=dds)
   
   # boxplots before and after normalisation
