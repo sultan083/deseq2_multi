@@ -134,7 +134,7 @@ Another way of visualizing the experiment variability is to look at the first pr
 
 <figure>
 <center>
-    <img src="PCA.png" alt="Principal component analysis" />
+    <img src="PCAplot.png" alt="Principal component analysis" />
 	<figcaption> Figure 7: First two components of a Principal Component Analysis, with percentages of variance associated with each axis. </figcaption>
 </center>
 </figure>
@@ -213,7 +213,7 @@ Once the dispersion estimation and the model fitting have been done, DESeq2 can 
 
 <figure>
 <center>
-    <img src="rawpHist.png" alt="Histogram(s) of raw p-values" />
+    <img src="rawpHist.png" alt="Histogram(s) of raw p-values" width="60%" />
 	<figcaption> Figure 12: Distribution(s) of raw p-values. </figcaption>
 </center>
 </figure>
@@ -243,7 +243,7 @@ Figure 13 represents the MA-plot of the data for the comparisons done, where dif
 
 <figure>
 <center>
-    <img src="MAPlot.png" alt="MA-plot(s)" />
+    <img src="MAPlot.png" alt="MA-plot(s)" width="60%" />
 	<figcaption> Figure 13: MA-plot(s) of each comparison. Red dots represent significantly differentially expressed features. </figcaption>
 </center>
 </figure>
@@ -252,7 +252,7 @@ Figure 14 shows the volcano plots for the comparisons performed and differential
 
 <figure>
 <center>
-    <img src="volcanoPlot.png" alt="Volcano plot(s)" />
+    <img src="volcanoPlot.png" alt="Volcano plot(s)" width="60%" />
 	<figcaption> Figure 14: Volcano plot(s) of each comparison. Red dots represent significantly differentially expressed features. </figcaption>
 </center>
 </figure>

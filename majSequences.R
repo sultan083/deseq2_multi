@@ -31,5 +31,5 @@ majSequences <- function(counts, n=3, group=target[,varInt], output.file="majseq
   for (i in 1:length(seqname)) text(x[i], maj[i]/2, seqname[i], cex=0.8, srt=90, adj=0)
   dev.off()
   
-  return(p)
+  return(invisible(p))
 }
