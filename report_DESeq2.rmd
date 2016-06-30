@@ -8,8 +8,6 @@ Author: `r author`
 
 Date: `r Sys.Date()`
 
-The SARTools R package which generated this report has been developped at PF2 - Institut Pasteur by M.-A. Dillies and H. Varet (hugo.varet@pasteur.fr). Thanks to cite H. Varet, L. Brillet-Guéguen, J.-Y. Coppee and M.-A. Dillies, _SARTools: A DESeq2- and EdgeR-Based R Pipeline for Comprehensive Differential Analysis of RNA-Seq Data_, PLoS One, 2016, doi: http://dx.doi.org/10.1371/journal.pone.0157022 when using this tool for any analysis published.
-
 --------------------------------------------------------------------------------------------------------------------------
 
 ## Table of contents
@@ -302,7 +300,6 @@ cat(paste(si, collapse="\n -"), "\n")
 
 Parameter values used for this analysis are:
 
-- workDir: `r workDir`
 - projectName: `r projectName`
 - author: `r author`
 - targetFile: `r targetFile`
@@ -318,7 +315,7 @@ Parameter values used for this analysis are:
 - pAdjustMethod: `r pAdjustMethod`
 - typeTrans: `r typeTrans`
 - locfunc: `r locfunc`
-- colors: `r colors`
+- colors: `r col`
 
 --------------------------------------------------------------------------------------------------------------------------
 
