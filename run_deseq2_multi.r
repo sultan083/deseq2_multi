@@ -21,7 +21,8 @@ args<-commandArgs(TRUE)
 
 options<-matrix(c('project',  'pn', 1,  "character",    	# project name
                   'author', 'au', 1,  "character",      	# author of the statistical analysis/report  
-                  'Dir',  'r',  1,  "character",        	# path to the directory containing raw counts files
+                  'Dir',  'r',  2,  "character",        	# path to the directory containing raw counts files
+		  'rawCounts', 'rc', 2, "character",		# path to the combined raw count file
                   'OutDir',  'w',  1,  "character",     	# path to the output file 
                   'target', 't',  1,  "character",      	# path to the design/target file
                   'features', 'fe', 2,  "character",    	# names of the features to be removed (specific HTSeq-count information and rRNA for example)
@@ -50,6 +51,7 @@ projectName <- ret.opts$project
 author  <-  ret.opts$author
 targetFile <- ret.opts$target
 rawDir <- ret.opts$Dir
+counts.file <- ret.opts$rawCounts
 OutDir <- ret.opts$OutDir
 featuresToRemove <- ret.opts$features
 varInt  <- ret.opts$varInt
@@ -73,8 +75,13 @@ checkParameters.DESeq2(projectName=projectName,author=author,targetFile=targetFi
 target <- loadTargetFile(targetFile=targetFile, varInt=varInt, condRef=condRef, batch=batch)
 
 # loading counts
-#source("/loadCountData.R")
-counts <- loadCountData(target=target, rawDir=rawDir, featuresToRemove=featuresToRemove)
+if (ret.opts$rawCounts) {
+counts <- loadCountData(target=target, rawDir=rawDir, header=FALSE, skip=0, featuresToRemove=featuresToRemove)
+} else
+{
+source("/loadCountData.R")
+counts <- loadCountData(target=target, counts.file=counts.file, header=FALSE, skip=0, featuresToRemove=featuresToRemove)
+}
 
 # description Plots
 source("/descriptionPlots.r")
