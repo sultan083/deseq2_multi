@@ -66,16 +66,12 @@ pAdjustMethod <- ret.opts$pAdjust
 typeTrans <- ret.opts$typeTrans
 col <- ret.opts$colors
 
-# checking parameters
-checkParameters.DESeq2(projectName=projectName,author=author,targetFile=targetFile,rawDir=rawDir,featuresToRemove=featuresToRemove,
-		       varInt=varInt,condRef=condRef,batch=batch,fitType=fitType,cooksCutoff=cooksCutoff,independentFiltering=independentFiltering,
-		       alpha=alpha, pAdjustMethod=pAdjustMethod,typeTrans=typeTrans,locfunc=locfunc,colors=col)
 
 # loading target file
 target <- loadTargetFile(targetFile=targetFile, varInt=varInt, condRef=condRef, batch=batch)
 
 # loading counts
-if (ret.opts$rawCounts) {
+if (counts.file) {
 counts <- loadCountData(target=target, rawDir=rawDir, header=FALSE, skip=0, featuresToRemove=featuresToRemove)
 } else
 {
