@@ -51,7 +51,7 @@ projectName <- ret.opts$project
 author  <-  ret.opts$author
 targetFile <- ret.opts$target
 rawDir <- ret.opts$Dir
-counts.file <- ret.opts$rawCounts
+rawCounts <- ret.opts$rawCounts
 OutDir <- ret.opts$OutDir
 featuresToRemove <- ret.opts$features
 varInt  <- ret.opts$varInt
@@ -71,12 +71,12 @@ col <- ret.opts$colors
 target <- loadTargetFile(targetFile=targetFile, varInt=varInt, condRef=condRef, batch=batch)
 
 # loading counts
-if (counts.file) {
+if (rawDir) {
 counts <- loadCountData(target=target, rawDir=rawDir, header=FALSE, skip=0, featuresToRemove=featuresToRemove)
 } else
 {
 source("/loadCountData.R")
-counts <- loadCountData(target=target, counts.file=counts.file, header=FALSE, skip=0, featuresToRemove=featuresToRemove)
+counts <- loadCountData(target=target, counts.file=rawCounts, header=FALSE, skip=0, featuresToRemove=featuresToRemove)
 }
 
 # description Plots
