@@ -75,7 +75,7 @@ if (!is.null(ret.opts$Dir)) {
 counts <- loadCountData(target=target, rawDir=rawDir, header=FALSE, skip=0, featuresToRemove=featuresToRemove)}
 
 if (!is.null(ret.opts$rawCounts)) {
-source("/Users/upendra_35/Documents/git.repos/deseq2_multi/loadCountData.R")
+source("/loadCountData.R")
 counts <- loadCountData(target=target, rawCounts=rawCounts, header=FALSE, skip=0, featuresToRemove=featuresToRemove)}
 
 # description Plots
