@@ -80,8 +80,8 @@ counts <- loadCountData(target=target, rawDir=rawDir, header=TRUE, skip=0, featu
 
 # Raw counts file
 if (!is.null(ret.opts$rawCounts)) {
-source("/loadCountData_rc.R")
-counts <- loadCountData_rc(target=target, rawCounts=rawCounts, header=TRUE, skip=0, featuresToRemove=featuresToRemove)
+source("/loadCountDatarc.R")
+counts <- loadCountDatarc(target=target, rawCounts=rawCounts, header=TRUE, skip=0, featuresToRemove=featuresToRemove)
 }
 
 # description Plots
@@ -106,6 +106,6 @@ summaryResults <- summarizeResults.DESeq2(out.DESeq2, group=target[,varInt], col
 source("/writeReport.DESeq2.r")
 writeReport.DESeq2(target=target, counts=counts, out.DESeq2=out.DESeq2, summaryResults=summaryResults, majSequences=majSequences, OutDir=OutDir, 
 		   projectName=projectName, author=author, targetFile=targetFile, rawDir=rawDir, featuresToRemove=featuresToRemove, varInt=varInt,
-                   condRef=condRef, batch=batch, fitType=fitType, cooksCutoff=cooksCutoff, independentFiltering=independentFiltering, alpha=alpha, 
+       condRef=condRef, batch=batch, fitType=fitType, cooksCutoff=cooksCutoff, independentFiltering=independentFiltering, alpha=alpha, 
 		   pAdjustMethod=pAdjustMethod, typeTrans=typeTrans, locfunc=locfunc, colors=col)
 # End
