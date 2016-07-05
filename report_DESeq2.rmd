@@ -104,7 +104,7 @@ We may wish to assess the similarity between samples across conditions. A pairwi
 
 <figure>
 <center>
-    <img src="pairwiseScatter.png" alt="Pairwise scatter plot (not produced when more than 30 samples)" />
+    <img src="pairwiseScatter.png" alt="Pairwise scatter plot (not produced when more than 30 samples)" width="80%" />
 	<figcaption> Figure 5: Pairwise comparison of samples. </figcaption>
 </center>
 </figure>
