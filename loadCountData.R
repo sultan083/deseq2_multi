@@ -37,9 +37,10 @@ loadCountData <- function(target, rawDir, header=TRUE, skip=0, featuresToRemove)
   rownames(counts) <- rawCounts[,1]
   counts <- counts[order(rownames(counts)),]
   
-  featuresToRemove <- unlist(strsplit(ret.opts$features, ","))
-  
   cat("\nFeatures removed:\n")
+
+  featuresToRemove <- unlist(strsplit(ret.opts$features, ","))
+
   for (f in setdiff(featuresToRemove,"")){
     match <- grep(f, rownames(counts))
     if (length(match)>0){
