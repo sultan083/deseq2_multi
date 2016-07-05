@@ -74,13 +74,13 @@ target <- loadTargetFile(targetFile=targetFile, varInt=varInt, condRef=condRef, 
 
 # Raw counts directory
 if (!is.null(ret.opts$Dir)) {
-source("/Users/upendra_35/Documents/git.repos/deseq2_multi/loadCountData.R")
+source("/loadCountData.R")
 counts <- loadCountData(target=target, rawDir=rawDir, header=TRUE, skip=0, featuresToRemove=featuresToRemove)
 }
 
 # Raw counts file
 if (!is.null(ret.opts$rawCounts)) {
-source("/Users/upendra_35/Documents/git.repos/deseq2_multi/loadCountData_rc.R")
+source("/loadCountData_rc.R")
 counts <- loadCountData_rc(target=target, rawCounts=rawCounts, header=TRUE, skip=0, featuresToRemove=featuresToRemove)
 }
 
