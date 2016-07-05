@@ -71,12 +71,18 @@ col <- ret.opts$colors
 target <- loadTargetFile(targetFile=targetFile, varInt=varInt, condRef=condRef, batch=batch)
 
 # loading counts
-if (!is.null(ret.opts$Dir)) {
-counts <- loadCountData(target=target, rawDir=rawDir, header=TRUE, skip=0, featuresToRemove=featuresToRemove)}
 
+# Raw counts directory
+if (!is.null(ret.opts$Dir)) {
+source("/Users/upendra_35/Documents/git.repos/deseq2_multi/loadCountData.R")
+counts <- loadCountData(target=target, rawDir=rawDir, header=TRUE, skip=0, featuresToRemove=featuresToRemove)
+}
+
+# Raw counts file
 if (!is.null(ret.opts$rawCounts)) {
-source("/loadCountData.R")
-counts <- loadCountData(target=target, rawCounts=rawCounts, header=TRUE, skip=0, featuresToRemove=featuresToRemove)}
+source("/Users/upendra_35/Documents/git.repos/deseq2_multi/loadCountData_rc.R")
+counts <- loadCountData_rc(target=target, rawCounts=rawCounts, header=TRUE, skip=0, featuresToRemove=featuresToRemove)
+}
 
 # description Plots
 source("/descriptionPlots.r")
