@@ -28,6 +28,7 @@ options<-matrix(c('project',  'pn', 1,  "character",      # project name
                   'features', 'fe', 2,  "character",      # names of the features to be removed (specific HTSeq-count information and rRNA for example)
                   'varInt', 'v',  2,  "character",        # factor of interest
                   'condRef',  'c',  2,  "character",      # reference biological condition
+                  'design', 'di', 2,  "character",        # Experimental design to test
                   'batch',  'b',  2,  "character",        # blocking factor: NULL (default) or "batch" for example
                   'locfunc', 'l', 2, "character",         # "median" (default) or "shorth" to estimate the size factors
                   'fitType', 'f', 2, "character",         # mean-variance relationship: "parametric" (default) or "local"
@@ -57,6 +58,7 @@ featuresToRemove <- ret.opts$features
 varInt  <- ret.opts$varInt
 condRef <- ret.opts$condRef
 batch <- ret.opts$batch
+design <- ret.opts$design
 fitType <- ret.opts$filtType
 cooksCutoff <- ret.opts$cooksCutoff
 independentFiltering <- ret.opts$independentFiltering
@@ -90,9 +92,8 @@ majSequences <- descriptionPlots(counts=counts, n=3, group=target[,varInt], outp
 
 # analysis with DESeq2
 source("/run.DESeq2.r")
-out.DESeq2 <- run.DESeq2(counts=counts, target=target, varInt=varInt, batch=batch, locfunc=locfunc, fitType=fitType, pAdjustMethod=pAdjustMethod,
+out.DESeq2 <- run.DESeq2(counts=counts, target=target, varInt=varInt, batch=batch, design=design, locfunc=locfunc, fitType=fitType, pAdjustMethod=pAdjustMethod,
                          cooksCutoff=cooksCutoff, independentFiltering=independentFiltering, alpha=alpha)
-
 # MDS + clustering
 source("/exploreCounts.R")
 exploreCounts(object=out.DESeq2$dds, group=target[,varInt], typeTrans=typeTrans, col=col)
