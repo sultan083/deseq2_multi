@@ -1,0 +1,5 @@
+label	files	group
+WT1	counts.txt	WT
+WT2	counts.txt	WT
+KO1	counts.txt	KO
+KO2	counts.txt	KO
