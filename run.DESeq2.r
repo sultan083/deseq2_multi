@@ -16,10 +16,10 @@
 #' @return A list containing the \code{dds} object (\code{DESeqDataSet} class), the \code{results} objects (\code{DESeqResults} class) and the vector of size factors
 #' @author Hugo Varet
 
-run.DESeq2 <- function(counts, target, varInt, batch=NULL, locfunc, fitType, pAdjustMethod, cooksCutoff, independentFiltering, alpha){
+run.DESeq2 <- function(counts, target, varInt, batch=NULL, design, locfunc, fitType, pAdjustMethod, cooksCutoff, independentFiltering, alpha){
   # building dds object
-  dds <- DESeqDataSetFromMatrix(countData=counts, colData=target, 
-                                design=formula(paste("~", ifelse(!is.null(batch), paste(batch,"+"), ""), varInt)))
+  design=formula(paste0("~",design))
+  dds <- DESeqDataSetFromMatrix(countData=counts, colData=target, design=design)
   cat("Design of the statistical model:\n")
   cat(paste(as.character(design(dds)),collapse=" "),"\n")					  
   
@@ -28,10 +28,10 @@ run.DESeq2 <- function(counts, target, varInt, batch=NULL, locfunc, fitType, pAd
   cat("\nNormalization factors:\n")
   print(sizeFactors(dds))
   
-  # estimating dispersions
+  # # estimating dispersions
   dds <- estimateDispersions(dds, fitType=fitType)
   
-  # statistical testing: perform all the comparisons between the levels of varInt
+  # # statistical testing: perform all the comparisons between the levels of varInt
   dds <- nbinomWaldTest(dds)
   results <- list()
   for (comp in combn(nlevels(colData(dds)[,varInt]), 2, simplify=FALSE)){
