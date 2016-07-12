@@ -11,3 +11,9 @@ label	file	group	cond
 33_M_1	count3.txt	M	33
 33_M_2	count3.txt	M	33
 33_M_3	count3.txt	M	33
+5_LL_1	count3.txt	LL	5
+5_LL_2	count3.txt	LL	5
+5_LL_3	count3.txt	LL	5
+33_LL_1	count3.txt	LL	33
+33_LL_2	count3.txt	LL	33
+33_LL_3	count3.txt	LL	33
