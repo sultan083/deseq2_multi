@@ -16,12 +16,10 @@
 #' @return A list containing the \code{dds} object (\code{DESeqDataSet} class), the \code{results} objects (\code{DESeqResults} class) and the vector of size factors
 #' @author Hugo Varet
 
-run.DESeq2 <- function(counts, target, varInt, batch=NULL, design, locfunc, fitType, pAdjustMethod, cooksCutoff, independentFiltering, alpha){
+run.DESeq2 <- function(counts, target, varInt, batch=NULL, locfunc, fitType, pAdjustMethod, cooksCutoff, independentFiltering, alpha){
   # building dds object
-  design=formula(paste0("~",design))
-  dds <- DESeqDataSetFromMatrix(countData=counts, colData=target, design=design)
-  cat("Design of the statistical model:\n")
-  cat(paste(as.character(design(dds)),collapse=" "),"\n")					  
+  dds <- DESeqDataSetFromMatrix(countData=counts, colData=target, 
+                                design=formula(paste("~", ifelse(!is.null(batch), paste(batch,"+"), ""), varInt)))			  
   
   # normalization
   dds <- estimateSizeFactors(dds,locfunc=eval(as.name(locfunc)))
